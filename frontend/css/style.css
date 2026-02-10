@@ -1,0 +1,374 @@
+/* === Reset & Base Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f8f9fa;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Hero Carousel === */
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-inner img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* === Sections === */
+section {
+  padding: 60px 0;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(120deg, #004aad, #2a7ae2);
+  color: #fff;
+}
+
+/* === Headings & Text === */
+.text-primary {
+  color: #004aad !important;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* === Squad & Staff Cards === */
+.card.profile {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s, transform 0.6s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card.profile.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card.profile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card.profile .avatar {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.card.profile .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.card.profile .avatar img:hover {
+  transform: scale(1.05);
+}
+
+.card.profile .info {
+  padding: 15px;
+  text-align: center;
+}
+
+.card.profile .info .name {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.card.profile .info .role {
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.card.profile .info .num {
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.card.profile .info .links a {
+  margin: 0 3px;
+  display: inline-block;
+  color: #333;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.card.profile .info .links a:hover {
+  color: #004aad;
+  transform: scale(1.1);
+}
+
+.card.profile .info .sub {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* === Buttons === */
+.btn-primary {
+  background-color: #004aad;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #2a7ae2;
+  transform: translateY(-2px);
+}
+
+/* === Animations (Fade-in on scroll) === */
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Gallery Cards === */
+.gallery-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-card img {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.3s;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-card .card-body {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* === Staff Cards === */
+.staff-card {
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.staff-card .avatar {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #004aad;
+  transition: transform 0.3s;
+}
+
+.staff-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.staff-card .avatar:hover {
+  transform: scale(1.05);
+}
+
+.staff-card .info .name {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.staff-card .info .role {
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.staff-card .info .sub {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+/* Circular Avatars */
+.staff-card .avatar {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #004aad;
+  transition: transform 0.3s;
+}
+
+.staff-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.staff-card .avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Gallery Cards */
+.gallery-card img {
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-card .card-body p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+/* === Responsive Adjustments === */
+@media (max-width: 992px) {
+  .card.profile .avatar {
+    height: 220px;
+  }
+  .staff-card .avatar {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h1,
+  .carousel-caption h2 {
+    font-size: 1.8rem !important;
+  }
+  .carousel-caption p.lead {
+    font-size: 1rem !important;
+  }
+  .card.profile .avatar {
+    height: 200px;
+  }
+  .gallery-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .staff-card .avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-caption {
+    padding: 0.5rem 1rem;
+  }
+  .carousel-caption h1,
+  .carousel-caption h2 {
+    font-size: 1.4rem !important;
+  }
+  .card.profile .avatar {
+    height: 150px;
+  }
+  .gallery-card img {
+    height: 150px;
+  }
+  .btn-primary {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
