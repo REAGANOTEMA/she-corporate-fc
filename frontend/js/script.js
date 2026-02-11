@@ -2,23 +2,25 @@
 // Hero Carousel - Auto Slide Every 4 Seconds
 // =======================
 const heroCarouselElement = document.getElementById('heroCarousel');
-const heroCarousel = new bootstrap.Carousel(heroCarouselElement, {
-  interval: 4000, // 4 seconds
-  ride: 'carousel',
-  pause: false,
-  wrap: true,
-  touch: true
-});
-
-// Add fade-in animation for captions on slide
-const carouselCaptions = heroCarouselElement.querySelectorAll('.carousel-caption');
-heroCarouselElement.addEventListener('slide.bs.carousel', () => {
-  carouselCaptions.forEach(caption => {
-    caption.classList.remove('animate-caption');
-    void caption.offsetWidth; // Trigger reflow
-    caption.classList.add('animate-caption');
+if (heroCarouselElement) {
+  const heroCarousel = new bootstrap.Carousel(heroCarouselElement, {
+    interval: 4000,
+    ride: 'carousel',
+    pause: false,
+    wrap: true,
+    touch: true
   });
-});
+
+  // Fade-in captions on slide
+  const carouselCaptions = heroCarouselElement.querySelectorAll('.carousel-caption');
+  heroCarouselElement.addEventListener('slide.bs.carousel', () => {
+    carouselCaptions.forEach(caption => {
+      caption.classList.remove('animate-caption');
+      void caption.offsetWidth; // Trigger reflow
+      caption.classList.add('animate-caption');
+    });
+  });
+}
 
 // =======================
 // Chatbot Toggle & Function
@@ -26,12 +28,15 @@ heroCarouselElement.addEventListener('slide.bs.carousel', () => {
 const toggle = document.getElementById('chatbot-toggle');
 const chatbot = document.getElementById('chatbot');
 
-toggle.addEventListener('click', () => {
-  chatbot.style.display = chatbot.style.display === 'block' ? 'none' : 'block';
-});
+if (toggle && chatbot) {
+  toggle.addEventListener('click', () => {
+    chatbot.style.display = chatbot.style.display === 'block' ? 'none' : 'block';
+  });
+}
 
 function sendMessage() {
-  const input = document.getElementById('chatInput').value.trim().toLowerCase();
+  const inputElement = document.getElementById('chatInput');
+  const input = inputElement.value.trim().toLowerCase();
   const responses = document.getElementById('chatResponses');
   if (!input) return;
 
@@ -60,7 +65,7 @@ function sendMessage() {
   }
 
   responses.innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
-  document.getElementById('chatInput').value = '';
+  inputElement.value = '';
   responses.scrollTop = responses.scrollHeight;
 }
 
@@ -73,46 +78,49 @@ let selectedProvider = '';
 
 document.querySelectorAll('.payment-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    currentItem = btn.dataset.item;
+    currentItem = btn.dataset.item || '';
     let quantity = 1;
 
     if (currentItem.includes('Tickets')) {
-      quantity = parseInt(document.getElementById('ticketQuantity').value);
-      currentItem = `${quantity} Tickets for ${document.getElementById('matchSelect').value}`;
+      quantity = parseInt(document.getElementById('ticketQuantity')?.value) || 1;
+      currentItem = `${quantity} Tickets for ${document.getElementById('matchSelect')?.value || 'Unknown Match'}`;
     }
 
     currentAmount = parseInt(btn.dataset.baseAmount) * quantity;
-    const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
-    paymentModal.show();
-    resetSteps();
+    const paymentModalEl = document.getElementById('paymentModal');
+    if (paymentModalEl) {
+      const paymentModal = new bootstrap.Modal(paymentModalEl);
+      paymentModal.show();
+      resetSteps();
+    }
   });
 });
 
 function selectProvider(provider) {
   selectedProvider = provider;
-  document.getElementById('step1').classList.remove('active');
-  document.getElementById('step2').classList.add('active');
+  document.getElementById('step1')?.classList.remove('active');
+  document.getElementById('step2')?.classList.add('active');
 }
 
 function goToPinStep() {
-  const phoneNumber = document.getElementById('phoneNumber').value;
+  const phoneNumber = document.getElementById('phoneNumber')?.value.trim();
   if (!phoneNumber || !/^(07[78]\d{7}|075\d{7})$/.test(phoneNumber)) {
     alert('Enter a valid Ugandan phone number starting with 077, 078, or 075.');
     return;
   }
   alert(`Simulating payment prompt to your phone (${phoneNumber}) from ${selectedProvider.toUpperCase()}.`);
-  document.getElementById('step2').classList.remove('active');
-  document.getElementById('step3').classList.add('active');
+  document.getElementById('step2')?.classList.remove('active');
+  document.getElementById('step3')?.classList.add('active');
 }
 
 function completePayment() {
-  const pin = document.getElementById('pinInput').value;
+  const pin = document.getElementById('pinInput')?.value.trim();
   if (!pin || pin.length !== 5) {
     alert('Enter a 5-digit PIN for demo purposes.');
     return;
   }
-  document.getElementById('step3').classList.remove('active');
-  document.getElementById('step4').classList.add('active');
+  document.getElementById('step3')?.classList.remove('active');
+  document.getElementById('step4')?.classList.add('active');
 
   setTimeout(() => {
     alert(`Payment of ${currentAmount} UGX for ${currentItem} successful!`);
@@ -120,12 +128,10 @@ function completePayment() {
 }
 
 function resetSteps() {
-  document.getElementById('step1').classList.add('active');
-  document.getElementById('step2').classList.remove('active');
-  document.getElementById('step3').classList.remove('active');
-  document.getElementById('step4').classList.remove('active');
-  document.getElementById('phoneNumber').value = '';
-  document.getElementById('pinInput').value = '';
+  ['step1','step2','step3','step4'].forEach(id => document.getElementById(id)?.classList.remove('active'));
+  document.getElementById('step1')?.classList.add('active');
+  document.getElementById('phoneNumber')?.value = '';
+  document.getElementById('pinInput')?.value = '';
   selectedProvider = '';
 }
 
@@ -133,11 +139,6 @@ function resetSteps() {
 // Fade-in Scroll Animations
 // =======================
 const faders = document.querySelectorAll('.fade-on-scroll, .animate-fade, .card.profile');
-
-const scrollOptions = {
-  threshold: 0.1
-};
-
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -145,7 +146,7 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
       observer.unobserve(entry.target);
     }
   });
-}, scrollOptions);
+}, { threshold: 0.1 });
 
 faders.forEach(fader => appearOnScroll.observe(fader));
 
@@ -155,7 +156,6 @@ faders.forEach(fader => appearOnScroll.observe(fader));
 const fanGallery = document.querySelector('#fan-zone .row.g-2');
 if (fanGallery) {
   let isDown = false, startX, scrollLeft;
-
   fanGallery.addEventListener('mousedown', e => {
     isDown = true;
     fanGallery.classList.add('active');
@@ -165,10 +165,10 @@ if (fanGallery) {
   fanGallery.addEventListener('mouseleave', () => isDown = false);
   fanGallery.addEventListener('mouseup', () => isDown = false);
   fanGallery.addEventListener('mousemove', e => {
-    if(!isDown) return;
+    if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - fanGallery.offsetLeft;
-    const walk = (x - startX) * 2; 
+    const walk = (x - startX) * 2;
     fanGallery.scrollLeft = scrollLeft - walk;
   });
 }
@@ -176,34 +176,41 @@ if (fanGallery) {
 // =======================
 // YouTube API Fetch
 // =======================
-const apiKey = 'YOUR_YOUTUBE_API_KEY';
+const apiKey = 'YOUR_YOUTUBE_API_KEY'; // Replace with valid key
 const playlistId = 'UCr3cBLqIeJST4C5mvjoKVQ';
 
 async function fetchYouTubeVideos() {
+  const videosContainer = document.getElementById('youtube-videos');
+  if (!videosContainer) return;
   const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=${playlistId}&key=${apiKey}`;
+
   try {
     const response = await fetch(url);
     const data = await response.json();
-    const videosContainer = document.getElementById('youtube-videos');
     videosContainer.innerHTML = '';
-    data.items.forEach(item => {
-      const video = item.snippet;
-      const col = document.createElement('div');
-      col.className = 'col-md-4 mb-3 animate-fade fade-on-scroll';
-      col.innerHTML = `
-        <div class="card h-100">
-          <img src="${video.thumbnails.medium.url}" class="card-img-top" alt="${video.title}">
-          <div class="card-body">
-            <h5 class="card-title">${video.title}</h5>
-            <p class="card-text">${video.description.substring(0, 100)}...</p>
-            <a href="https://www.youtube.com/watch?v=${video.resourceId.videoId}" target="_blank" class="btn btn-primary btn-sm">Watch</a>
-          </div>
-        </div>`;
-      videosContainer.appendChild(col);
-    });
+
+    if (data.items && data.items.length) {
+      data.items.forEach(item => {
+        const video = item.snippet;
+        const col = document.createElement('div');
+        col.className = 'col-md-4 mb-3 animate-fade fade-on-scroll';
+        col.innerHTML = `
+          <div class="card h-100">
+            <img src="${video.thumbnails.medium.url}" class="card-img-top" alt="${video.title}">
+            <div class="card-body">
+              <h5 class="card-title">${video.title}</h5>
+              <p class="card-text">${video.description.substring(0, 100)}...</p>
+              <a href="https://www.youtube.com/watch?v=${video.resourceId.videoId}" target="_blank" class="btn btn-primary btn-sm">Watch</a>
+            </div>
+          </div>`;
+        videosContainer.appendChild(col);
+      });
+    } else {
+      videosContainer.innerHTML = '<p>No videos found in this playlist.</p>';
+    }
   } catch (err) {
     console.error(err);
-    document.getElementById('youtube-videos').innerHTML = '<p>Could not load videos. Check API key.</p>';
+    videosContainer.innerHTML = '<p>Could not load videos. Check API key.</p>';
   }
 }
 
