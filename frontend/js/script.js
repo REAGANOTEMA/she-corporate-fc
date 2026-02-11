@@ -1,4 +1,26 @@
 // =======================
+// Hero Carousel - Auto Slide Every 4 Seconds
+// =======================
+const heroCarouselElement = document.getElementById('heroCarousel');
+const heroCarousel = new bootstrap.Carousel(heroCarouselElement, {
+  interval: 4000, // 4 seconds
+  ride: 'carousel',
+  pause: false,
+  wrap: true,
+  touch: true
+});
+
+// Add fade-in animation for captions on slide
+const carouselCaptions = heroCarouselElement.querySelectorAll('.carousel-caption');
+heroCarouselElement.addEventListener('slide.bs.carousel', () => {
+  carouselCaptions.forEach(caption => {
+    caption.classList.remove('animate-caption');
+    void caption.offsetWidth; // Trigger reflow
+    caption.classList.add('animate-caption');
+  });
+});
+
+// =======================
 // Chatbot Toggle & Function
 // =======================
 const toggle = document.getElementById('chatbot-toggle');
@@ -131,23 +153,25 @@ faders.forEach(fader => appearOnScroll.observe(fader));
 // Fan Gallery Horizontal Scroll
 // =======================
 const fanGallery = document.querySelector('#fan-zone .row.g-2');
-let isDown = false, startX, scrollLeft;
+if (fanGallery) {
+  let isDown = false, startX, scrollLeft;
 
-fanGallery.addEventListener('mousedown', e => {
-  isDown = true;
-  fanGallery.classList.add('active');
-  startX = e.pageX - fanGallery.offsetLeft;
-  scrollLeft = fanGallery.scrollLeft;
-});
-fanGallery.addEventListener('mouseleave', () => isDown = false);
-fanGallery.addEventListener('mouseup', () => isDown = false);
-fanGallery.addEventListener('mousemove', e => {
-  if(!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - fanGallery.offsetLeft;
-  const walk = (x - startX) * 2; 
-  fanGallery.scrollLeft = scrollLeft - walk;
-});
+  fanGallery.addEventListener('mousedown', e => {
+    isDown = true;
+    fanGallery.classList.add('active');
+    startX = e.pageX - fanGallery.offsetLeft;
+    scrollLeft = fanGallery.scrollLeft;
+  });
+  fanGallery.addEventListener('mouseleave', () => isDown = false);
+  fanGallery.addEventListener('mouseup', () => isDown = false);
+  fanGallery.addEventListener('mousemove', e => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - fanGallery.offsetLeft;
+    const walk = (x - startX) * 2; 
+    fanGallery.scrollLeft = scrollLeft - walk;
+  });
+}
 
 // =======================
 // YouTube API Fetch

@@ -8,23 +8,40 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-
+  <section>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
   <div class="container">
+    <!-- Brand -->
     <a class="navbar-brand fw-bold" href="#">She Corporate FC</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+    <!-- Toggler/collapsible button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="#fan-zone">Fan Zone</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tickets">Tickets</a></li>
-        <li class="nav-item"><a class="nav-link" href="#youtube">Videos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#fan-zone">Fan Zone</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#tickets">Tickets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#youtube">Videos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -34,78 +51,101 @@
 <section id="hero" class="position-relative overflow-hidden" style="height: 80vh; min-height: 500px;">
   <div id="heroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-inner h-100">
+
+      <!-- Slide 1 -->
       <div class="carousel-item active h-100">
-        <img src="https://pbs.twimg.com/media/HAP3wVlWAAINgT3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Recent Team Photo">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h1 class="display-3 fw-bold text-shadow mb-3">SHE CORPORATE FC</h1>
-          <p class="lead fs-3 mb-2">#Sharks || #TheInspirers</p>
-          <p class="fs-5 opacity-90">Uganda's Premier Women's Football Club - Empowering Women Through Sport</p>
+        <img src="images/hero01.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Recent Team Photo">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h1 class="display-3 fw-bold text-white text-shadow mb-3">SHE CORPORATE FC</h1>
+          <p class="lead fs-3 mb-2 text-white text-shadow">Sharks || TheInspirers</p>
+          <p class="fs-5 text-white text-shadow opacity-90">Uganda's Premier Women's Football Club - Empowering Women Through Sport</p>
         </div>
       </div>
+
+      <!-- Slide 2 -->
       <div class="carousel-item h-100">
-        <img src="https://pbs.twimg.com/media/HAKpF0lWYAIG2OF.jpg" class="d-block w-100 h-100 object-fit-cover" alt="New Jersey Launch">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h2 class="display-4 fw-bold text-shadow">Champions On and Off the Pitch</h2>
-          <p class="lead fs-4">Inspiring Excellence</p>
+        <img src="images/hero4.jpg" class="d-block w-100 h-100 object-fit-cover" alt="New Jersey Launch">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h2 class="display-4 fw-bold text-white text-shadow">Champions On and Off the Pitch</h2>
+          <p class="lead fs-4 text-white text-shadow">Inspiring Excellence</p>
         </div>
       </div>
+
+      <!-- Slide 3 -->
       <div class="carousel-item h-100">
-        <img src="https://pbs.twimg.com/media/HAIVvMaWAAA8Yv_.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Player Birthday">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h2 class="display-4 fw-bold text-shadow">Unbreakable Spirit</h2>
-          <p class="lead fs-4">Defending Our Legacy</p>
+        <img src="images/ball5.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Player Birthday">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h2 class="display-4 fw-bold text-white text-shadow">Unbreakable Spirit</h2>
+          <p class="lead fs-4 text-white text-shadow">Defending Our Legacy</p>
         </div>
       </div>
+
+      <!-- Slide 4 -->
       <div class="carousel-item h-100">
-        <img src="https://pbs.twimg.com/media/HADX7UAW0AAZ63C.jpg" class="d-block w-100 h-100 object-fit-cover" alt="League Return">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h2 class="display-4 fw-bold text-shadow">Rising Stars</h2>
-          <p class="lead fs-4">Shaping the Future</p>
+        <img src="images/ball6.jpg" class="d-block w-100 h-100 object-fit-cover" alt="League Return">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h2 class="display-4 fw-bold text-white text-shadow">Rising Stars</h2>
+          <p class="lead fs-4 text-white text-shadow">Shaping the Future</p>
         </div>
       </div>
+
+      <!-- Slide 5 -->
       <div class="carousel-item h-100">
-        <img src="https://pbs.twimg.com/media/G_bVPS2XAAAFPxq.jpg" class="d-block w-100 h-100 object-fit-cover" alt="New Year Determination">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h2 class="display-4 fw-bold text-shadow">Power and Passion</h2>
-          <p class="lead fs-4">The Sharks Attack</p>
+        <img src="images/hero6.jpg" class="d-block w-100 h-100 object-fit-cover" alt="New Year Determination">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h2 class="display-4 fw-bold text-white text-shadow">Power and Passion</h2>
+          <p class="lead fs-4 text-white text-shadow">The Sharks Attack</p>
         </div>
       </div>
+
+      <!-- Slide 6 -->
       <div class="carousel-item h-100">
-        <img src="https://pbs.twimg.com/media/G9j92VRXsAAs12I.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Goal Keeper">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h2 class="display-4 fw-bold text-shadow">Defensive Wall</h2>
-          <p class="lead fs-4">Solid as Ever</p>
+        <img src="images/goalkeeper1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Goal Keeper">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h2 class="display-4 fw-bold text-white text-shadow">Defensive Wall</h2>
+          <p class="lead fs-4 text-white text-shadow">Solid as Ever</p>
         </div>
       </div>
+
+      <!-- Slide 7 -->
       <div class="carousel-item h-100">
-        <img src="https://pbs.twimg.com/media/G9j637AXUAAGjPN.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Player Celebration">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h2 class="display-4 fw-bold text-shadow">Versatility in Action</h2>
-          <p class="lead fs-4">Multi-Talented Stars</p>
+        <img src="images/celebrate1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Player Celebration">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h2 class="display-4 fw-bold text-white text-shadow">Versatility in Action</h2>
+          <p class="lead fs-4 text-white text-shadow">Multi-Talented Stars</p>
         </div>
       </div>
+
+      <!-- Slide 8 -->
       <div class="carousel-item h-100">
-        <img src="https://pbs.twimg.com/media/G9emtzbXAAA8DmO.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Award Win">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h2 class="display-4 fw-bold text-shadow">Award Winners</h2>
-          <p class="lead fs-4">Recognized Excellence</p>
+        <img src="images/hero2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Award Win">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h2 class="display-4 fw-bold text-white text-shadow">Award Winners</h2>
+          <p class="lead fs-4 text-white text-shadow">Recognized Excellence</p>
         </div>
       </div>
+
+      <!-- Slide 9 -->
       <div class="carousel-item h-100">
-        <img src="https://pbs.twimg.com/media/G9Z0dQtWoAEBJyZ.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Win Reminder">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h2 class="display-4 fw-bold text-shadow">Victorious Moments</h2>
-          <p class="lead fs-4">Relive the Wins</p>
+        <img src="images/prayer2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Win Reminder">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h2 class="display-4 fw-bold text-white text-shadow">Victorious Moments</h2>
+          <p class="lead fs-4 text-white text-shadow">Relive the Wins</p>
         </div>
       </div>
+
+      <!-- Slide 10 -->
       <div class="carousel-item h-100">
-        <img src="https://pbs.twimg.com/media/G9VTVyOXwAA34Hb.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Player of the Month">
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-white text-center px-4">
-          <h2 class="display-4 fw-bold text-shadow">Star Performers</h2>
-          <p class="lead fs-4">Monthly Heroes</p>
+        <img src="images/hero3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Player of the Month">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+          <h2 class="display-4 fw-bold text-white text-shadow">Star Performers</h2>
+          <p class="lead fs-4 text-white text-shadow">Monthly Heroes</p>
         </div>
       </div>
+
     </div>
+
+    <!-- Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -122,190 +162,388 @@
     <h2 class="text-center fw-bold mb-4 text-white text-shadow">Squad</h2>
     <p class="text-center fs-5 opacity-85 mb-5">Players with jersey numbers, roles, and social profiles.</p>
     <div class="row g-4">
+
       <!-- Goalkeepers -->
       <div class="col-12"><h3 class="text-center text-white mb-3">Goalkeepers</h3></div>
+
       <div class="col-md-6 col-lg-4">
         <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8cKaw5WcAE1D1H?format=jpg&name=small" alt="Naava Molly Nabitaka"></div>
-          <div class="info"><div class="name">Naava Molly Nabitaka</div><div class="role">Goalkeeper</div><div class="num">#1</div><div class="links"><a class="btn" href="https://x.com/NaavaMolly" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G7d6bpMXYAEmBox?format=jpg&name=large" alt="Nakyazze Babirye"></div>
-          <div class="info"><div class="name">Nakyazze Babirye</div><div class="role">Goalkeeper</div><div class="num">#13</div><div class="links"><a class="btn" href="https://www.tiktok.com/@075652degea24" target="_blank" rel="noopener noreferrer"><svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G7tINTqWMAAVIV5?format=jpg&name=360x360" alt="Nasasira Gift"></div>
-          <div class="info"><div class="name">Nasasira Gift</div><div class="role">Goalkeeper</div><div class="num">#1</div><div class="links"><a class="btn" href="https://x.com/NaavaMolly" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
+          <div class="avatar">
+            <img src="images/naava_molly.jpg" alt="Naava Molly Nabitaka">
+          </div>
+          <div class="info">
+            <div class="name">Naava Molly Nabitaka</div>
+            <div class="role">Goalkeeper</div>
+            <div class="num">#1</div>
+            <div class="sub">Fearless between the posts and a true wall of defense.</div>
+            <div class="links">
+              <a class="btn" href="https://x.com/NaavaMolly" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Defenders -->
-      <div class="col-12"><h3 class="text-center text-white mb-3 mt-5">Defenders</h3></div>
       <div class="col-md-6 col-lg-4">
         <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G5KcT-dXIAAYVg1?format=jpg&name=large" alt="Nafuna Dinah"></div>
-          <div class="info"><div class="name">Nafuna Dinah</div><div class="role">Defender</div><div class="num">#2</div><div class="links"><a class="btn" href="https://www.tiktok.com/@dinahmugonyi" target="_blank" rel="noopener noreferrer"><svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G7jT7IZWcAA2tv8?format=jpg&name=small" alt="Nakakawa Shamim"></div>
-          <div class="info"><div class="name">Nakakawa Shamim</div><div class="role">Defender</div><div class="num">#3</div><div class="links"><a class="btn" href="https://x.com/SheCorporateFC" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G6luGxkWEAA48AW?format=jpg&name=small" alt="Namirimu Margret"></div>
-          <div class="info"><div class="name">Namirimu Margret</div><div class="role">Defender</div><div class="num">#4</div><div class="links"><a class="btn" href="https://x.com/MargretNamirimu" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G7jT7IZWcAA2tv8?format=jpg&name=small" alt="Nakacwa Kevin"></div>
-          <div class="info"><div class="name">Nakacwa Kevin</div><div class="role">Defender</div><div class="num">#10</div><div class="links"><a class="btn" href="https://x.com/KevinNakacwa11" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8NcyznWQAEiHkZ?format=jpg&name=medium" alt="Nakate Cissy"></div>
-          <div class="info"><div class="name">Nakate Cissy</div><div class="role">Defender</div><div class="num">#16</div><div class="links"><a class="btn" href="https://x.com/16Cissy" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8Nc7TcawAAPBNJ?format=jpg&name=medium" alt="Akandinda Gillian"></div>
-          <div class="info"><div class="name">Akandinda Gillian</div><div class="role">Defender</div><div class="num">#22</div><div class="links"><a class="btn" href="https://x.com/AkadindaG65807" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8NcwgiW0AY2NBN?format=jpg&name=medium" alt="Nakato Rebecca"></div>
-          <div class="info"><div class="name">Nakato Rebecca</div><div class="role">Defender</div><div class="num">#26</div><div class="links"><a class="btn" href="https://x.com/nakatorebecca30" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
+          <div class="avatar">
+            <img src="images/nakyazze_babirye.jpg" alt="Nakyazze Babirye">
+          </div>
+          <div class="info">
+            <div class="name">Nakyazze Babirye</div>
+            <div class="role">Goalkeeper</div>
+            <div class="num">#13</div>
+            <div class="sub">Quick reflexes and an unwavering focus on the goal.</div>
+            <div class="links">
+              <a class="btn" href="https://www.tiktok.com/@075652degea24" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Midfielders -->
-      <div class="col-12"><h3 class="text-center text-white mb-3 mt-5">Midfielders</h3></div>
       <div class="col-md-6 col-lg-4">
         <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8Nc3yKXsAMY7Pv?format=jpg&name=medium" alt="Namuddu Viola"></div>
-          <div class="info"><div class="name">Namuddu Viola</div><div class="role">Midfielder</div><div class="num">#5</div><div class="links"><a class="btn" href="https://www.tiktok.com/@namudduviola33" target="_blank" rel="noopener noreferrer"><svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G6-1-sWXUAA5Lk6?format=jpg&name=large" alt="Akuuku Peninah Ruth"></div>
-          <div class="info"><div class="name">Akuuku Peninah Ruth</div><div class="role">Midfielder</div><div class="num">#19</div><div class="links"><a class="btn" href="https://x.com/alomo_whisper" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8NcyW5WoAAREjm?format=jpg&name=medium" alt="Nakyeyune Leticia"></div>
-          <div class="info"><div class="name">Nakyeyune Leticia</div><div class="role">Midfielder</div><div class="num">#8</div><div class="links"><a class="btn" href="https://x.com/leticiatitie196" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G4BoSKqXMAAng7N?format=jpg&name=small" alt="Nantege Ronah"></div>
-          <div class="info"><div class="name">Nantege Ronah</div><div class="role">Midfielder</div><div class="num">#11</div><div class="links"><a class="btn" href="https://x.com/nantegeronah" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8Ncx3FXQAMcrPy?format=jpg&name=medium" alt="Edweru Barbra"></div>
-          <div class="info"><div class="name">Edweru Barbra</div><div class="role">Midfielder</div><div class="num">#14</div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G7lqT8rWgAA_InK?format=jpg&name=medium" alt="Namubiru Lukiya"></div>
-          <div class="info"><div class="name">Namubiru Lukiya</div><div class="role">Midfielder</div><div class="num">#15</div><div class="links"><a class="btn" href="https://x.com/lukiyanamubiru6" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G62TCfpXcAA8oO7?format=jpg&name=medium" alt="Nandhego Rebecca"></div>
-          <div class="info"><div class="name">Nandhego Rebecca</div><div class="role">Midfielder</div><div class="num">#17</div><div class="links"><a class="btn" href="https://x.com/SheCorporateFC" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8NdFWTW4AY3Pre?format=jpg&name=medium" alt="Galenda Shiellah"></div>
-          <div class="info"><div class="name">Galenda Shiellah</div><div class="role">Midfielder</div><div class="num">#20</div><div class="links"><a class="btn" href="https://x.com/SheCorporateFC" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8Nc3yKXsAMY7Pv?format=jpg&name=medium" alt="Namirimu Nusullah"></div>
-          <div class="info"><div class="name">Namirimu Nusullah</div><div class="role">Midfielder</div><div class="num">#23</div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8Nc0MhXQAIfzrL?format=jpg&name=medium" alt="Mutesi Gloria"></div>
-          <div class="info"><div class="name">Mutesi Gloria</div><div class="role">Midfielder</div><div class="num">#25</div><div class="links"><a class="btn" href="https://x.com/SheCorporateFC" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8Nc0zwWsAEXfzo?format=jpg&name=large" alt="Nankiinga Moureen"></div>
-          <div class="info"><div class="name">Nankiinga Moureen</div><div class="role">Midfielder</div><div class="num">#27</div><div class="links"><a class="btn" href="https://www.tiktok.com/@moureennankinga" target="_blank" rel="noopener noreferrer"><svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8Nc2N8WMAA-Ba6?format=jpg&name=medium" alt="Ajuo Barbra"></div>
-          <div class="info"><div class="name">Ajuo Barbra</div><div class="role">Midfielder</div><div class="num">#28</div></div>
+          <div class="avatar">
+            <img src="images/nasasira_gift.jpg" alt="Nasasira Gift">
+          </div>
+          <div class="info">
+            <div class="name">Nasasira Gift</div>
+            <div class="role">Goalkeeper</div>
+            <div class="num">#1</div>
+            <div class="sub">Agile, sharp, and reliable in high-pressure moments.</div>
+            <div class="links">
+              <a class="btn" href="https://x.com/NaavaMolly" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Forwards -->
-      <div class="col-12"><h3 class="text-center text-white mb-3 mt-5">Forwards</h3></div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G9ckyWwXwAA9E8v?format=jpg&name=large" alt="Kisakye Sandra"></div>
-          <div class="info"><div class="name">Kisakye Sandra</div><div class="role">Forward</div><div class="num">#7</div><div class="links"><a class="btn" href="https://www.tiktok.com/@sandrakisakye7" target="_blank" rel="noopener noreferrer"><svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok</a><a class="btn" href="https://x.com/KisakyeSandra5" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8NczLkWcAoq4_6?format=jpg&name=medium" alt="Namanda Jesca"></div>
-          <div class="info"><div class="name">Namanda Jesca</div><div class="role">Forward</div><div class="num">#9</div><div class="links"><a class="btn" href="https://x.com/namanda_jesca09" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G65lLbRWMAAYKOa?format=jpg&name=small" alt="Birungi Adrine"></div>
-          <div class="info"><div class="name">Birungi Adrine</div><div class="role">Forward</div><div class="num">#12</div><div class="links"><a class="btn" href="https://www.tiktok.com/@adrine.birungi" target="_blank" rel="noopener noreferrer"><svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G7d6Z49WIAAdAJ4?format=jpg&name=large" alt="Alomo Whisper"></div>
-          <div class="info"><div class="name">Alomo Whisper</div><div class="role">Forward</div><div class="num">#19</div><div class="links"><a class="btn" href="https://x.com/alomo_whisper" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8Nc2N8WMAA-Ba6?format=jpg&name=medium" alt="Babirye Hairat"></div>
-          <div class="info"><div class="name">Babirye Hairat</div><div class="role">Winger</div><div class="num">#21</div><div class="links"><a class="btn" href="https://www.tiktok.com/@hyra.11" target="_blank" rel="noopener noreferrer"><svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok</a></div></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G7uAFFqWUAAFqTm?format=jpg&name=small" alt="Nambafu Alima"></div>
-          <div class="info"><div class="name">Nambafu Alima</div><div class="role">Forward</div><div class="num">#29</div><div class="links"><a class="btn" href="https://x.com/AlimaNamba34337" target="_blank" rel="noopener noreferrer"><svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X</a></div></div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
+
+<!-- Defenders -->
+<div class="col-12"><h3 class="text-center text-white mb-3 mt-5">Defenders</h3></div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/nafuna_dinah.jpg" alt="Nafuna Dinah"></div>
+    <div class="info">
+      <div class="name">Nafuna Dinah</div>
+      <div class="role">Defender</div>
+      <div class="num">#2</div>
+      <div class="sub">Strong and composed, a defender you can trust.</div>
+      <div class="links">
+        <a class="btn" href="https://www.tiktok.com/@dinahmugonyi" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/nakakawa_shamim.jpg" alt="Nakakawa Shamim"></div>
+    <div class="info">
+      <div class="name">Nakakawa Shamim</div>
+      <div class="role">Defender</div>
+      <div class="num">#3</div>
+      <div class="sub">Agile and tactical, always reading the game perfectly.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/SheCorporateFC" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/namirimu_margret.jpg" alt="Namirimu Margret"></div>
+    <div class="info">
+      <div class="name">Namirimu Margret</div>
+      <div class="role">Defender</div>
+      <div class="num">#4</div>
+      <div class="sub">Reliable and fearless, she blocks every attack with skill.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/MargretNamirimu" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/nakacwa_kevin.jpg" alt="Nakacwa Kevin"></div>
+    <div class="info">
+      <div class="name">Nakacwa Kevin</div>
+      <div class="role">Defender</div>
+      <div class="num">#10</div>
+      <div class="sub">Tenacious and fearless, the heart of the defense line.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/KevinNakacwa11" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/nakate_cissy.jpg" alt="Nakate Cissy"></div>
+    <div class="info">
+      <div class="name">Nakate Cissy</div>
+      <div class="role">Defender</div>
+      <div class="num">#16</div>
+      <div class="sub">Calm under pressure, she masters every defensive challenge.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/16Cissy" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/akandinda_gillian.jpg" alt="Akandinda Gillian"></div>
+    <div class="info">
+      <div class="name">Akandinda Gillian</div>
+      <div class="role">Defender</div>
+      <div class="num">#22</div>
+      <div class="sub">Strong, strategic, and always protecting the team.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/AkadindaG65807" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/nakato_rebecca.jpg" alt="Nakato Rebecca"></div>
+    <div class="info">
+      <div class="name">Nakato Rebecca</div>
+      <div class="role">Defender</div>
+      <div class="num">#26</div>
+      <div class="sub">Quick-thinking and reliable, always one step ahead of attackers.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/nakatorebecca30" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Midfielders -->
+<div class="col-12"><h3 class="text-center text-white mb-3 mt-5">Midfielders</h3></div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/namuddu_viola.jpg" alt="Namuddu Viola"></div>
+    <div class="info">
+      <div class="name">Namuddu Viola</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#5</div>
+      <div class="sub">Creative and dynamic, the engine of the midfield.</div>
+      <div class="links">
+        <a class="btn" href="https://www.tiktok.com/@namudduviola33" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/akuuku_peninah_ruth.jpg" alt="Akuuku Peninah Ruth"></div>
+    <div class="info">
+      <div class="name">Akuuku Peninah Ruth</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#19</div>
+      <div class="sub">Versatile and fast, driving the team forward with precision.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/alomo_whisper" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/nakyeyune_leticia.jpg" alt="Nakyeyune Leticia"></div>
+    <div class="info">
+      <div class="name">Nakyeyune Leticia</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#8</div>
+      <div class="sub">Elegant ball control and unmatched vision in midfield.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/leticiatitie196" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/nantege_ronah.jpg" alt="Nantege Ronah"></div>
+    <div class="info">
+      <div class="name">Nantege Ronah</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#11</div>
+      <div class="sub">Energetic and reliable, connecting defense to attack seamlessly.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/nantegeronah" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/edweru_barbra.jpg" alt="Edweru Barbra"></div>
+    <div class="info">
+      <div class="name">Edweru Barbra</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#14</div>
+      <div class="sub">Creative playmaker, always setting up opportunities for the team.</div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/namubiru_lukiya.jpg" alt="Namubiru Lukiya"></div>
+    <div class="info">
+      <div class="name">Namubiru Lukiya</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#15</div>
+      <div class="sub">Focused and strategic, controlling the rhythm of the game.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/lukiyanamubiru6" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/nandhego_rebecca.jpg" alt="Nandhego Rebecca"></div>
+    <div class="info">
+      <div class="name">Nandhego Rebecca</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#17</div>
+      <div class="sub">Sharp and resilient, a midfield presence you can count on.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/SheCorporateFC" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/galenda_shiellah.jpg" alt="Galenda Shiellah"></div>
+    <div class="info">
+      <div class="name">Galenda Shiellah</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#20</div>
+      <div class="sub">Creative and disciplined, a key link in the midfield chain.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/SheCorporateFC" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/namirimu_nusullah.jpg" alt="Namirimu Nusullah"></div>
+    <div class="info">
+      <div class="name">Namirimu Nusullah</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#23</div>
+      <div class="sub">Calm, composed, and always making smart passes.</div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/mutesi_gloria.jpg" alt="Mutesi Gloria"></div>
+    <div class="info">
+      <div class="name">Mutesi Gloria</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#25</div>
+      <div class="sub">Reliable and steady, keeping the midfield solid.</div>
+      <div class="links">
+        <a class="btn" href="https://x.com/SheCorporateFC" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-x" viewBox="0 0 24 24"><path d="M3 3h5.6l5.1 7.2L17.9 3H21l-6.9 9.7L21 21h-5.6l-5.4-7.6L6.1 21H3l7.2-10.1L3 3z"/></svg>X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/nankiinga_moureen.jpg" alt="Nankiinga Moureen"></div>
+    <div class="info">
+      <div class="name">Nankiinga Moureen</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#27</div>
+      <div class="sub">Fast, skillful, and always pushing the team forward.</div>
+      <div class="links">
+        <a class="btn" href="https://www.tiktok.com/@moureennankinga" target="_blank" rel="noopener noreferrer">
+          <svg class="icon icon-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.5 1.7 1.8 3.1 3.5 3.6v3.1c-1.3-.1-2.6-.5-3.7-1.2v6.6c0 4.1-3.3 7.4-7.4 7.4S1.5 19.2 1.5 15.1c0-4.1 3.3-7.4 7.4-7.4.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-2.3 0-4.1 1.9-4.1 4.2s1.9 4.2 4.2 4.2 4.1-1.9 4.1-4.2V3h3.4z"/></svg>TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+  <div class="card profile">
+    <div class="avatar"><img src="images/ajuo_barbra.jpg" alt="Ajuo Barbra"></div>
+    <div class="info">
+      <div class="name">Ajuo Barbra</div>
+      <div class="role">Midfielder</div>
+      <div class="num">#28</div>
+      <div class="sub">Versatile and strategic, always finding passing lanes.</div>
+    </div>
+  </div>
+</div>
+
+
 <!-- Staff Section -->
-<section id="staff" class="py-5 bg-light">
+ <section id="staff" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center fw-bold mb-4 text-primary">Staff</h2>
     <p class="text-center fs-5 opacity-85 mb-5">Coaching, medical, media, and club leadership.</p>
@@ -322,83 +560,170 @@
           </div>
         </div>
       </div>
-
-      <!-- Assistant Coach -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile staff-card">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G7jTcnWXUAAkswX?format=jpg&name=small" alt="Coach Pande"></div>
-          <div class="info text-center">
-            <div class="name">Coach Pande</div>
-            <div class="role">Assistant Coach</div>
-            <p class="sub">Supports the head coach with tactical training and player development. Active on <a href="https://www.tiktok.com/@pandesadam" target="_blank">TikTok</a>.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Goalkeeping Coach -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile staff-card">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/Gtm8zH0WkAA1JkH?format=jpg&name=small" alt="Mulindwa Isaac"></div>
-          <div class="info text-center">
-            <div class="name">Mulindwa Isaac</div>
-            <div class="role">Goalkeeping Coach</div>
-            <p class="sub">Specializes in goalkeeper training and match preparation. Connect: <a href="https://x.com/Isaacmulin" target="_blank">X</a>.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Media Officer -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile staff-card">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G758Fc5XMAE6vht?format=jpg&name=small" alt="Travor Mark"></div>
-          <div class="info text-center">
-            <div class="name">Travor Mark</div>
-            <div class="role">Media Officer</div>
-            <p class="sub">Manages media content and communications. Active on <a href="https://www.tiktok.com/@tr3vormark" target="_blank">TikTok</a> and <a href="https://x.com/Tr3vorMark" target="_blank">X</a>.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- CEO -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile staff-card">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/Gs1GXFXWIAAssqy?format=jpg&name=small" alt="Kakulu Mathias"></div>
-          <div class="info text-center">
-            <div class="name">Kakulu Mathias</div>
-            <div class="role">CEO</div>
-            <p class="sub">Leads the club administration and operations. Connect via <a href="https://x.com/KakuluMathias" target="_blank">X</a>.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Team Doctor -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile staff-card">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G8xW6mtWUAAzmek?format=jpg&name=small" alt="Dr Oscar Mutebi Ronald"></div>
-          <div class="info text-center">
-            <div class="name">Dr Oscar Mutebi Ronald</div>
-            <div class="role">Team Doctor</div>
-            <p class="sub">Responsible for players' health and medical care. Connect: <a href="https://x.com/Ahimisibwmark" target="_blank">X</a>.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Staff -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card profile staff-card">
-          <div class="avatar"><img src="https://pbs.twimg.com/media/G758Fc5XMAE6vht?format=jpg&name=small" alt="Andrew Mutebi"></div>
-          <div class="info text-center">
-            <div class="name">Andrew Mutebi</div>
-            <div class="role">Staff</div>
-            <p class="sub">Supports club operations and events. Active on <a href="https://www.tiktok.com/@andrewmutebikagudde" target="_blank">TikTok</a>.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
+<!-- Staff Section -->
+<section id="assistant-coach" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4 text-primary">Technical & Management Staff</h2>
 
+    <div class="row g-4">
+
+     <!-- Assistant Coach -->
+<div class="col-md-6 col-lg-4">
+  <div class="card profile staff-card">
+
+    <div class="avatar">
+      <img
+        src="https://pbs.twimg.com/media/G7jTcnWXUAAkswX?format=jpg&name=small"
+        alt="Coach Pande"
+        class="img-fluid"
+      >
+    </div>
+
+    <div class="info text-center">
+      <div class="name">Coach Pande</div>
+      <div class="role">Assistant Coach</div>
+
+      <p class="sub">
+        Supports the head coach with tactical training and player development.
+        Active on
+        <a href="https://www.tiktok.com/@pandesadam" target="_blank" rel="noopener">
+          TikTok
+        </a>.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+      <!-- Goalkeeping Coach -->
+<div class="col-md-6 col-lg-4">
+  <div class="card profile staff-card">
+
+    <div class="avatar">
+      <img
+        src="https://pbs.twimg.com/media/Gtm8zH0WkAA1JkH?format=jpg&name=small"
+        alt="Mulindwa Isaac"
+        class="img-fluid"
+      >
+    </div>
+
+    <div class="info text-center">
+      <div class="name">Mulindwa Isaac</div>
+      <div class="role">Goalkeeping Coach</div>
+
+      <p class="sub">
+        Specializes in goalkeeper training and match preparation.
+        Connect:
+        <a href="https://x.com/Isaacmulin" target="_blank" rel="noopener">
+          X
+        </a>.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+     <!-- Media Officer -->
+<div class="col-md-6 col-lg-4">
+  <div class="card profile staff-card">
+
+    <div class="avatar">
+      <img
+        src="https://pbs.twimg.com/media/G758Fc5XMAE6vht?format=jpg&name=small"
+        alt="Travor Mark"
+        class="img-fluid"
+      >
+    </div>
+
+    <div class="info text-center">
+      <div class="name">Travor Mark</div>
+      <div class="role">Media Officer</div>
+
+      <p class="sub">
+        Manages media content and communications. Active on
+        <a href="https://www.tiktok.com/@tr3vormark" target="_blank" rel="noopener">TikTok</a>
+        and
+        <a href="https://x.com/Tr3vorMark" target="_blank" rel="noopener">X</a>.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+ <!-- CEO -->
+<div class="col-md-6 col-lg-4">
+  <div class="card profile staff-card">
+
+    <div class="avatar">
+      <img
+        src="https://pbs.twimg.com/media/Gs1GXFXWIAAssqy?format=jpg&name=small"
+        alt="Kakulu Mathias"
+        class="img-fluid"
+      >
+    </div>
+
+    <div class="info text-center">
+      <div class="name">Kakulu Mathias</div>
+      <div class="role">CEO</div>
+
+      <p class="sub">
+        Leads the club administration and operations. Connect via
+        <a href="https://x.com/KakuluMathias" target="_blank" rel="noopener">X</a>.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+    <!-- Team Doctor -->
+<div class="col-md-6 col-lg-4">
+  <div class="card profile staff-card">
+    <div class="avatar">
+      <img
+        src="https://pbs.twimg.com/media/G8xW6mtWUAAzmek?format=jpg&name=small"
+        alt="Dr Oscar Mutebi Ronald"
+        class="img-fluid"
+      >
+    </div>
+    <div class="info text-center">
+      <div class="name">Dr Oscar Mutebi Ronald</div>
+      <div class="role">Team Doctor</div>
+      <p class="sub">
+        Responsible for players' health and medical care.
+        Connect: <a href="https://x.com/Ahimisibwmark" target="_blank" rel="noopener">X</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+      <!-- Staff -->
+<div class="col-md-6 col-lg-4">
+  <div class="card profile staff-card">
+    <div class="avatar">
+      <img
+        src="https://pbs.twimg.com/media/G758Fc5XMAE6vht?format=jpg&name=small"
+        alt="Andrew Mutebi"
+        class="img-fluid"
+      >
+    </div>
+    <div class="info text-center">
+      <div class="name">Andrew Mutebi</div>
+      <div class="role">Staff</div>
+      <p class="sub">
+        Supports club operations and events.
+        Active on <a href="https://www.tiktok.com/@andrewmutebikagudde" target="_blank" rel="noopener">TikTok</a>.
+      </p>
+    </div>
+  </div>
+</div>
+</div> <!-- Close row -->
+</div> <!-- Close container -->
+</section>
 
 <!-- History Section -->
 <section id="history" class="py-5 bg-light">
@@ -406,13 +731,27 @@
     <h2 class="text-center fw-bold mb-4 text-primary">Club History</h2>
     <div class="card">
       <div class="card-body">
-        <p class="sub">She Corporate FC competes in the FUFA Women Super League and is nicknamed “The Sharks.” The club featured in the inaugural women’s league in 2015 and has remained a pillar of Ugandan women’s football.</p>
-        <p class="sub">After a strong resurgence, She Corporate won the FUFA Women Elite League—earning promotion back to the Super League—and later secured the 2024 FUFA Women’s Cup in a penalty shootout against Rines SS WFC, underscoring their competitive edge and resilience.</p>
-        <p class="sub">The team is widely recognized for defensive discipline, tactical organization, and professional standards, consistently producing national‑team players and maintaining a strong presence in the league’s top tier.</p>
+        <p class="sub">
+          She Corporate FC competes in the FUFA Women Super League and is nicknamed
+          “The Sharks.” The club featured in the inaugural women’s league in 2015
+          and has remained a pillar of Ugandan women’s football.
+        </p>
+        <p class="sub">
+          After a strong resurgence, She Corporate won the FUFA Women Elite League—
+          earning promotion back to the Super League—and later secured the 2024
+          FUFA Women’s Cup in a penalty shootout against Rines SS WFC.
+        </p>
+        <p class="sub">
+          The team is widely recognized for defensive discipline, tactical
+          organization, and professional standards, consistently producing
+          national-team players and maintaining a strong presence in the league’s
+          top tier.
+        </p>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Kits Section -->
 <section id="kits" class="py-5 bg-light">
@@ -602,15 +941,30 @@
 <section id="tiktok" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center fw-bold mb-4 text-primary">TikTok Updates</h2>
-    <p class="text-center fs-5 opacity-85 mb-5">Latest videos from our TikTok account.</p>
+    <p class="text-center fs-5 opacity-85 mb-5">
+      Latest videos from our TikTok account.
+    </p>
     <div class="d-flex justify-content-center">
-      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shecorporatefc" data-unique-id="shecorporatefc" data-embed-type="creator" style="max-width: 1200px; min-width: 600px;">
-        <section> <a target="_blank" href="https://www.tiktok.com/@shecorporatefc?refer=creator_embed">@shecorporatefc</a> </section>
+      <blockquote 
+        class="tiktok-embed" 
+        cite="https://www.tiktok.com/@shecorporatefc" 
+        data-unique-id="shecorporatefc" 
+        data-embed-type="creator" 
+        style="max-width: 1200px; min-width: 600px;"
+      >
+        <a 
+          target="_blank" 
+          rel="noopener" 
+          href="https://www.tiktok.com/@shecorporatefc?refer=creator_embed"
+        >
+          @shecorporatefc
+        </a>
       </blockquote>
     </div>
     <script async src="https://www.tiktok.com/embed.js"></script>
   </div>
 </section>
+
 
 <!-- YouTube Section -->
 <section id="youtube" class="py-5 bg-blue-gradient">

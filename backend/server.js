@@ -1,12 +1,9 @@
-// backend/server.js
-
-// Load environment variables
-require('dotenv').config();
-
-// Import dependencies
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const path = require('path');
+require('dotenv').config();
 
 const ticketsRoutes = require('./routes/tickets');
 const fansRoutes = require('./routes/fans');
@@ -14,21 +11,28 @@ const fansRoutes = require('./routes/fans');
 const app = express();
 
 // Middleware
-app.use(cors());              // Enable CORS for all routes
-app.use(express.json());      // Replace body-parser (built-in in Express >=4.16)
+app.use(cors());
+app.use(bodyParser.json());
 
-// API Routes
+// API routes
 app.use('/api/tickets', ticketsRoutes);
 app.use('/api/fans', fansRoutes);
 
-// Serve frontend (optional, only if you want Express to serve your frontend)
+// Serve frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Catch-all route for frontend routing (SPA support)
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected successfully'))
+.catch(err => console.error('MongoDB connection error:', err));
+
+// Catch all route to serve index.html for SPA
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
-// Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
