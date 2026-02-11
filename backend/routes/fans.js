@@ -1,18 +1,24 @@
-const express = require('express'); 
+const express = require('express');
 const router = express.Router();
-const FanStory = require('../models/FanStory');
+const FanStory = require('../models/fanstory');
 
+// =======================
 // Submit a new fan story
+// =======================
 router.post('/submit', async (req, res) => {
   try {
     const { name, story } = req.body;
 
-    // Basic validation
-    if (!name || !story) {
-      return res.status(400).json({ error: 'Name and story are required' });
+    // Server-side validation
+    if (!name || name.trim().length < 2) {
+      return res.status(400).json({ error: 'Name is required and must be at least 2 characters' });
+    }
+    if (!story || story.trim().length < 10) {
+      return res.status(400).json({ error: 'Story is required and must be at least 10 characters' });
     }
 
-    const fanStory = new FanStory({ name, story });
+    // Save to DB
+    const fanStory = new FanStory({ name: name.trim(), story: story.trim() });
     await fanStory.save();
 
     res.status(201).json({
@@ -28,14 +34,19 @@ router.post('/submit', async (req, res) => {
   }
 });
 
+// =======================
 // Get all fan stories
+// =======================
 router.get('/', async (req, res) => {
   try {
     const stories = await FanStory.find().sort({ createdAt: -1 }); // latest first
     res.status(200).json(stories);
   } catch (err) {
     console.error('Error fetching fan stories:', err);
-    res.status(500).json({ error: 'Failed to fetch stories', details: err.message });
+    res.status(500).json({
+      error: 'Failed to fetch stories',
+      details: err.message
+    });
   }
 });
 

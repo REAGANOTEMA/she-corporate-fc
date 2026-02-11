@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Define FanStory schema
 const fanStorySchema = new mongoose.Schema(
   {
     name: {
@@ -18,8 +19,19 @@ const fanStorySchema = new mongoose.Schema(
     }
   },
   {
-    timestamps: true // automatically adds createdAt and updatedAt
+    timestamps: true // Adds createdAt and updatedAt automatically
   }
 );
+
+// Optional: Index name for faster queries (if needed)
+fanStorySchema.index({ name: 1 });
+
+// Optional: Add a method to sanitize story text before saving
+fanStorySchema.pre('save', function (next) {
+  // Remove any potential harmful tags, optional
+  // You could also use npm package 'sanitize-html' here if needed
+  this.story = this.story.replace(/<\/?[^>]+(>|$)/g, ""); 
+  next();
+});
 
 module.exports = mongoose.model('FanStory', fanStorySchema);

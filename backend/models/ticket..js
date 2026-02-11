@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Define Ticket schema
 const ticketSchema = new mongoose.Schema(
   {
     match: {
@@ -12,13 +13,13 @@ const ticketSchema = new mongoose.Schema(
       type: Number,
       required: [true, 'Quantity is required'],
       min: [1, 'Quantity must be at least 1'],
-      max: [100, 'Quantity cannot exceed 100'] // you can adjust this
+      max: [100, 'Quantity cannot exceed 100'] // Adjust as needed
     },
     phoneNumber: {
       type: String,
       required: [true, 'Phone number is required'],
       trim: true,
-      match: [/^\+?\d{10,15}$/, 'Phone number is invalid']
+      match: [/^(07[78]\d{7}|075\d{7}|\+2567[78]\d{7})$/, 'Enter a valid Ugandan phone number']
     },
     provider: {
       type: String,
@@ -32,8 +33,11 @@ const ticketSchema = new mongoose.Schema(
     }
   },
   {
-    timestamps: true
+    timestamps: true // automatically adds createdAt and updatedAt
   }
 );
+
+// Optional: Index for faster queries
+ticketSchema.index({ match: 1, phoneNumber: 1 });
 
 module.exports = mongoose.model('Ticket', ticketSchema);
