@@ -7,16 +7,20 @@ const pool = require('../config/db');
 // =======================
 const createFanStory = async ({ name, story }) => {
   try {
+    // Trim inputs first
+    name = name?.trim();
+    story = story?.trim();
+
     // Validation
-    if (!name || name.trim().length < 2 || name.trim().length > 50) {
+    if (!name || name.length < 2 || name.length > 50) {
       throw new Error('Name must be between 2 and 50 characters');
     }
 
-    if (!story || story.trim().length < 10 || story.trim().length > 1000) {
+    if (!story || story.length < 10 || story.length > 1000) {
       throw new Error('Story must be between 10 and 1000 characters');
     }
 
-    // Simple sanitization (remove HTML tags)
+    // Remove HTML tags (basic sanitization)
     const cleanStory = story.replace(/<\/?[^>]+(>|$)/g, '');
 
     const query = `
@@ -25,11 +29,12 @@ const createFanStory = async ({ name, story }) => {
       RETURNING id, name, story, created_at;
     `;
 
-    const values = [name.trim(), cleanStory.trim()];
+    const values = [name, cleanStory];
 
-    const { rows } = await pool.query(query, values);
+    const result = await pool.query(query, values);
 
-    return rows[0];
+    return result.rows[0];
+
   } catch (error) {
     console.error('Create Fan Story Error:', error.message);
     throw error;
@@ -47,8 +52,9 @@ const getFanStories = async () => {
       ORDER BY created_at DESC
     `;
 
-    const { rows } = await pool.query(query);
-    return rows;
+    const result = await pool.query(query);
+    return result.rows;
+
   } catch (error) {
     console.error('Fetch Fan Stories Error:', error.message);
     throw error;
@@ -57,5 +63,5 @@ const getFanStories = async () => {
 
 module.exports = {
   createFanStory,
-  getFanStories,
+  getFanStories
 };
