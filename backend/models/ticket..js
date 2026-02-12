@@ -1,43 +1,54 @@
-const mongoose = require('mongoose');
+// backend/models/ticket.js
 
-// Define Ticket schema
-const ticketSchema = new mongoose.Schema(
-  {
-    match: {
-      type: String,
-      required: [true, 'Match name is required'],
-      trim: true,
-      maxlength: [100, 'Match name can be at most 100 characters']
-    },
-    quantity: {
-      type: Number,
-      required: [true, 'Quantity is required'],
-      min: [1, 'Quantity must be at least 1'],
-      max: [100, 'Quantity cannot exceed 100'] // Adjust as needed
-    },
-    phoneNumber: {
-      type: String,
-      required: [true, 'Phone number is required'],
-      trim: true,
-      match: [/^(07[78]\d{7}|075\d{7}|\+2567[78]\d{7})$/, 'Enter a valid Ugandan phone number']
-    },
-    provider: {
-      type: String,
-      required: [true, 'Provider is required'],
-      trim: true,
-      maxlength: [50, 'Provider can be at most 50 characters']
-    },
-    purchasedAt: {
-      type: Date,
-      default: Date.now
-    }
-  },
-  {
-    timestamps: true // automatically adds createdAt and updatedAt
-  }
-);
+const pool = require('../config/db');
 
-// Optional: Index for faster queries
-ticketSchema.index({ match: 1, phoneNumber: 1 });
+// =======================
+// Create Ticket
+// =======================
+const createTicket = async ({
+  full_name,
+  email,
+  match,
+  seat_type,
+  quantity,
+  phoneNumber,
+  provider,
+  ticket_code
+}) => {
+  const query = `
+    INSERT INTO tickets
+    (full_name, email, match, seat_type, quantity, phone_number, provider, ticket_code)
+    VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
+    RETURNING *;
+  `;
 
-module.exports = mongoose.model('Ticket', ticketSchema);
+  const values = [
+    full_name,
+    email,
+    match,
+    seat_type,
+    quantity,
+    phoneNumber,
+    provider,
+    ticket_code
+  ];
+
+  const { rows } = await pool.query(query, values);
+  return rows[0];
+};
+
+
+// =======================
+// Get all tickets
+// =======================
+const getTickets = async () => {
+  const { rows } = await pool.query(
+    'SELECT * FROM tickets ORDER BY created_at DESC'
+  );
+  return rows;
+};
+
+module.exports = {
+  createTicket,
+  getTickets
+};

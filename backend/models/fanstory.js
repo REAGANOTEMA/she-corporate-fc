@@ -1,37 +1,61 @@
-const mongoose = require('mongoose');
+// backend/models/fanstory.js
 
-// Define FanStory schema
-const fanStorySchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: [true, 'Name is required'],
-      trim: true,
-      minlength: [2, 'Name must be at least 2 characters'],
-      maxlength: [50, 'Name can be at most 50 characters']
-    },
-    story: {
-      type: String,
-      required: [true, 'Story is required'],
-      trim: true,
-      minlength: [10, 'Story must be at least 10 characters'],
-      maxlength: [1000, 'Story can be at most 1000 characters']
+const pool = require('../config/db');
+
+// =======================
+// Create new fan story
+// =======================
+const createFanStory = async ({ name, story }) => {
+  try {
+    // Validation
+    if (!name || name.trim().length < 2 || name.trim().length > 50) {
+      throw new Error('Name must be between 2 and 50 characters');
     }
-  },
-  {
-    timestamps: true // Adds createdAt and updatedAt automatically
+
+    if (!story || story.trim().length < 10 || story.trim().length > 1000) {
+      throw new Error('Story must be between 10 and 1000 characters');
+    }
+
+    // Simple sanitization (remove HTML tags)
+    const cleanStory = story.replace(/<\/?[^>]+(>|$)/g, '');
+
+    const query = `
+      INSERT INTO fan_stories (name, story)
+      VALUES ($1, $2)
+      RETURNING id, name, story, created_at;
+    `;
+
+    const values = [name.trim(), cleanStory.trim()];
+
+    const { rows } = await pool.query(query, values);
+
+    return rows[0];
+  } catch (error) {
+    console.error('Create Fan Story Error:', error.message);
+    throw error;
   }
-);
+};
 
-// Optional: Index name for faster queries (if needed)
-fanStorySchema.index({ name: 1 });
+// =======================
+// Get all fan stories
+// =======================
+const getFanStories = async () => {
+  try {
+    const query = `
+      SELECT id, name, story, created_at
+      FROM fan_stories
+      ORDER BY created_at DESC
+    `;
 
-// Optional: Add a method to sanitize story text before saving
-fanStorySchema.pre('save', function (next) {
-  // Remove any potential harmful tags, optional
-  // You could also use npm package 'sanitize-html' here if needed
-  this.story = this.story.replace(/<\/?[^>]+(>|$)/g, ""); 
-  next();
-});
+    const { rows } = await pool.query(query);
+    return rows;
+  } catch (error) {
+    console.error('Fetch Fan Stories Error:', error.message);
+    throw error;
+  }
+};
 
-module.exports = mongoose.model('FanStory', fanStorySchema);
+module.exports = {
+  createFanStory,
+  getFanStories,
+};
