@@ -1,19 +1,18 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
 
 // =======================
 // PostgreSQL connection
 // =======================
-const pool = require('./config/db'); // Make sure db.js exports the Pool instance
+const pool = require('./config/db');
 
 // =======================
 // Routes
 // =======================
 const ticketsRoutes = require('./routes/tickets');
-const fansRoutes = require('./routes/fan'); // make sure file name matches
+const fansRoutes = require('./routes/fan');
 
 const app = express();
 
@@ -21,8 +20,8 @@ const app = express();
 // Middleware
 // =======================
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // =======================
 // API Routes
@@ -36,20 +35,18 @@ app.use('/api/fans', fansRoutes);
 const frontendPath = path.join(__dirname, '../frontend');
 app.use(express.static(frontendPath));
 
-// Catch-all route (for SPA or plain HTML)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(frontendPath, 'index.html'), (err) => {
-    if (err) {
-      console.error('Error sending index.html:', err);
-      res.status(500).send('Internal Server Error');
-    }
-  });
+// =======================
+// Catch-all route (Express v5 FIX)
+// =======================
+app.use((req, res) => {
+  res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 // =======================
 // Start Server
 // =======================
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
