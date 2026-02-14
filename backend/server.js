@@ -1,17 +1,19 @@
-// backend/server.js
-
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
 
+// =======================
 // PostgreSQL connection
-const pool = require('./config/db'); // db.js file in config folder
+// =======================
+const pool = require('./config/db'); // Make sure db.js exports the Pool instance
 
+// =======================
 // Routes
+// =======================
 const ticketsRoutes = require('./routes/tickets');
-const fansRoutes = require('./routes/fans');
+const fansRoutes = require('./routes/fan'); // make sure file name matches
 
 const app = express();
 
@@ -34,7 +36,7 @@ app.use('/api/fans', fansRoutes);
 const frontendPath = path.join(__dirname, '../frontend');
 app.use(express.static(frontendPath));
 
-// Catch-all route (for React / SPA or plain frontend routing)
+// Catch-all route (for SPA or plain HTML)
 app.get('*', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'), (err) => {
     if (err) {
